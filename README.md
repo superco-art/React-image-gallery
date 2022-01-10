@@ -1,70 +1,63 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto es una galeria de imagenes donde se puede buscar la foto por su nombre y cargar cada vez mas fotos.
+Fue creado con ### React.Js, ### Node.Js y ### [Cloudinary](https://cloudinary.com/users/register/free ).
 
-## Available Scripts
+## esta organizado en dos partes:
 
-In the project directory, you can run:
+1. La carpeta "my-favorite-pictures" es la parte de frontend con React.
+2. La carpeta "api" es la parte del servidor, creado con NODE y la api que se conecta con Claudinary.com.
 
-### `npm start`
+### Crear una cuenta en Cloudinary 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+https://cloudinary.com/users/register/free 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+En el dashboard encontraras las claves para poder conectarte. 
+En el proyecto, carpeta api, crea un archivo llamado .env donde vas a escribir lasclaves:
 
-### `npm test`
+API_KEY={YOUR_API_KEY}
+CLOUD_NAME={YOUR_CLOUD_NAME}
+API_SECRET={YOUR_API_SECRET}
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+En el terminal ejecuta:
 
-### `npm run build`
+npm install
+npm run server
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Dependencias
+Para crear nuestra propia api con NODE hay que instalar varias dependencias como: 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```python
+npm i axios
+npm i express
+npm i body-parser
+npm i cors
+npm i dotenv
+npm i nodemon --save dev
+npm i eslint
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Se puede ver si funciona en localhost:7000/photos en Postman o Chrome.
 
-### `npm run eject`
+### Run the Frontend
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Nota! Asegurate que el Node server (en la carpeta api) esta lanzado.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+En la carpeta **my-favorite-pictures** crea un archivo **.env** y add an environment variable to point to the local node.js server e.g:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+REACT_APP_API_URL=http://localhost:7000
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Lanzar la aplicacion
 
-## Learn More
+```bash
+npm install
+npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+La aplicacion deberia abrirse en localhost:3000
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+### Proximamente voy hacer un CRUD para poder editar y borar las fotos.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
